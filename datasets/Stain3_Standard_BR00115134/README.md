@@ -7,7 +7,7 @@ This a set of images from a 384-well plate.
 - The file `load_data.csv` describes the mapping of images to channels and wells
 - The file `platemap.csv` describs the mapping of wells to compounds (identified by the column `pert_id_index`)
 
-Here's an overview of the data
+Here's an overview of the data (only 1 row is displayed)
 
 ```r
 suppressPackageStartupMessages(library(tidyverse))
