@@ -40,3 +40,20 @@ load_data %>%
 |FileName_OrigMito        |r01c01f01p01-ch1sk1fk1fl1.tiff | Image of the Mito channel |
 |FileName_OrigDNA         |r01c01f01p01-ch5sk1fk1fl1.tiff | Image of the DNA channel |
 |FileName_OrigBrightfield |r01c01f01p01-ch6sk1fk1fl1.tiff | Image of the Brightfield channel |
+
+
+All 90 compounds have 4 replicates. The negative control ("DMSO") has 24 replicates.
+
+```r
+platemap %>% 
+  group_by(Metadata_pert_id_index) %>% 
+  tally(name = "number_of_replicates") %>%
+  group_by(number_of_replicates) %>%
+  tally(name = "number_of_compounds") %>%
+  knitr::kable()
+```
+  
+| number_of_replicates| number_of_compounds|
+|--------------------:|-------------------:|
+|                    4|                  90|
+|                   24|                   1| 
